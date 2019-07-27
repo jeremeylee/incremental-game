@@ -4,7 +4,7 @@ import { Row, Menu } from 'antd';
 const Navigation = (props) => {
 
   return (
-    <Row>
+    <Row type="flex" justify="center">
       <Menu
         style={{ width: 256 }}
         defaultSelectedKeys={['1']}

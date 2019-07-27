@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Button } from 'antd';
+import { Row, Col, Button } from 'antd';
 import { connect } from 'react-redux';
 import { incrementGold } from '../reducers/goldReducer';
 
@@ -8,11 +8,13 @@ const Currency = (props) => {
     props.incrementGold();
   };
   return (
-    <Row>  
-      <Row>{props.currency}</Row>
-      <Row>
+    <Row type="flex" justify="center">
+      <Col>
+      <Row type="flex" justify="center">{props.currency}</Row>
+      <Row type="flex" justify="center">
         <Button onClick={handleClick}>Increment</Button>
       </Row>
+      </Col>
     </Row>
   );
 };
