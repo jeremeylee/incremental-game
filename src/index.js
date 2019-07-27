@@ -6,9 +6,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import goldReducer from './reducers/goldReducer';
+import navigationReducer from './reducers/navigationReducer';
 
 const reducer = combineReducers({
   currency: goldReducer,
+  navigation: navigationReducer,
 });
 
 const store = createStore(reducer);
