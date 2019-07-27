@@ -2,13 +2,10 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { connect } from 'react-redux';
 import { incrementGold } from '../reducers/goldReducer';
-import soundFile from '../audio/yo.mp3';
 
 const Currency = (props) => {
   const handleClick = () => {
-    const yo = new Audio(soundFile);
     props.incrementGold();
-    yo.play();
   };
   return (
     <Row type="flex" justify="center">
