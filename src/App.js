@@ -7,14 +7,8 @@ import Navigation from './components/navigation';
 function App() {
   return (
     <div>
-      <Row>
-          <Navigation />
-      </Row>
-      <Row>
-        <Currency />
-
-      </Row>
-      
+      <Navigation />
+      <Currency />
     </div>
   );
 }

@@ -8,12 +8,12 @@ const Currency = (props) => {
     props.incrementGold();
   };
   return (
-    <div>
+    <Row>  
       <Row>{props.currency}</Row>
       <Row>
         <Button onClick={handleClick}>Increment</Button>
       </Row>
-    </div>
+    </Row>
   );
 };
 
