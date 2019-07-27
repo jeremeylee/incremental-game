@@ -5,7 +5,6 @@ import Currency from './components/currency';
 function App() {
   return (
     <div>
-      Hello World
       <Currency />
     </div>
   );
