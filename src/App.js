@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Navigation from './components/navigation';
@@ -8,6 +8,9 @@ import { incrementGold } from './reducers/goldReducer';
 
 
 const App = (props) => {
+  const [currentInterval, setCurrentInterval] = useState(props.interval);
+  const [timeoutID, setTimeoutID] = useState(undefined);
+
   const display = () => {
     switch (props.navigation) {
       case 'home':
@@ -19,18 +22,21 @@ const App = (props) => {
     }
   };
 
-    const currencyInterval = () => {
-    setTimeout(() => {
-      console.log('interval: ', props.interval);
+  const currencyInterval = () => {
+    setTimeoutID(() => setTimeout(() => {
+      console.log(`interval: ${currentInterval} timeoutID: ${timeoutID}`);
+      setCurrentInterval(props.interval);
       props.incrementGold();
       currencyInterval();
-    }, props.interval);
+    }, 1000000 / currentInterval));
   };
 
   useEffect(() => {
     console.log('loaded');
+    clearTimeout(timeoutID);
     currencyInterval();
-  },[]);
+  }, [props.interval]);
+
   return (
     <div className="App">
       <h2>Yeet Clicker 2000</h2>
@@ -38,7 +44,7 @@ const App = (props) => {
       {display()}
     </div>
   );
-}
+};
 
 const mapStateToProps = state => (
   {
@@ -51,5 +57,5 @@ const mapDispatchToProps = (
   {
     incrementGold,
   }
-)
+);
 export default connect(mapStateToProps, mapDispatchToProps)(App);

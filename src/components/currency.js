@@ -7,7 +7,7 @@ import { updateInterval } from '../reducers/intervalReducer';
 const Currency = (props) => {
   const handleClick = () => {
     props.incrementGold();
-    props.updateInterval(1000);
+    props.updateInterval(100000);
   };
   return (
     <Row type="flex" justify="center">
