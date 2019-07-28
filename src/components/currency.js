@@ -2,10 +2,12 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { connect } from 'react-redux';
 import { incrementGold } from '../reducers/goldReducer';
+import { updateInterval } from '../reducers/intervalReducer';
 
 const Currency = (props) => {
   const handleClick = () => {
     props.incrementGold();
+    props.updateInterval(1000);
   };
   return (
     <Row type="flex" justify="center">
@@ -22,12 +24,14 @@ const Currency = (props) => {
 const mapStateToProps = state => (
   {
     currency: state.currency,
+    interval: state.interval,
   }
 );
 
 const mapDispatchToProps = (
   {
     incrementGold,
+    updateInterval,
   }
 );
 

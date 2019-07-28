@@ -7,15 +7,18 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import goldReducer from './reducers/goldReducer';
 import navigationReducer from './reducers/navigationReducer';
+import intervalReducer from './reducers/intervalReducer';
 
 const reducer = combineReducers({
   currency: goldReducer,
   navigation: navigationReducer,
+  interval: intervalReducer,
 });
 
 const store = createStore(reducer);
 
 const render = () => {
+  console.log(store.getState());
   ReactDOM.render(
     <Provider store={store}>
       <App />
