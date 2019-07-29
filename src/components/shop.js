@@ -8,6 +8,7 @@ const Shop = (props) => {
         <ShopItem 
           label="yeet"
           cost={10}
+          rate={1000}
           currencyValue = {props.currencyValue}
           setCurrencyValue = {props.setCurrencyValue}
         />

@@ -1,16 +1,15 @@
-const intervalReducer = (state = 100, action) => {
+const intervalReducer = (state = null, action) => {
   if (action.type === 'NEW') {
-    const newInterval = state + action.newInterval;
-    return newInterval;
-  } else {
-    return state;
+    return action.intervalID;
   }
+
+  return state;
 };
 
-export const updateInterval = value => (
+export const updateInterval = intervalID => (
   {
     type: 'NEW',
-    newInterval: value,
+    intervalID,
   }
 );
 
