@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Navigation from './components/navigation';
@@ -8,7 +8,6 @@ import { useInterval } from './hooks/useInterval';
 
 const App = (props) => {
   const [currencyValue, setCurrencyValue] = useState(0);
-  const [newRate, setNewRate] = useState(0);
 
   useInterval(() => {
     setCurrencyValue(currencyValue + props.interval);

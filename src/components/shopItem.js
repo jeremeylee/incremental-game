@@ -12,32 +12,34 @@ const ShopItem = (props) => {
       props.updateCurrency(props.currencyValue - props.cost);
       props.updateInterval(props.rate);
       props.setCurrencyValue(props.currencyValue - props.cost);
-      
       setPurchased(true);
-      /* currencyInterval(); */
     }
-    
+
   };
 
 
   return (
     <div>
-      {!purchased ? <Button onClick={handlePurchase}>{props.label} {props.cost}</Button> : <div></div>}
+      {!purchased ? <Button onClick={handlePurchase}>
+          {props.label} 
+          {' '}
+          {props.cost}
+        </Button> : <div />}
     </div>
-    
-  )
-}
+
+  );
+};
 
 const mapStateToProps = state => (
   {
     interval: state.interval,
   }
-)
+);
 
 const mapDispatchToProps = (
   {
     updateCurrency,
     updateInterval,
   }
-)
+);
 export default connect(mapStateToProps, mapDispatchToProps)(ShopItem);

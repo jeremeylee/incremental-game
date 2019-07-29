@@ -1,33 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { connect } from 'react-redux';
 import { updateCurrency } from '../reducers/currencyReducer';
 import { updateInterval } from '../reducers/intervalReducer';
 
 const Currency = (props) => {
-  const [timeoutID, setTimeoutID] = useState();
-  const [start, setStart] = useState(false);
-
-
-/*   const currencyInterval = () => {
-    const timeout = setTimeout(() => {
-      console.log(`interval: ${100000 / props.interval}`);
-      props.incrementCurrency();
-      currencyInterval();
-    }, 100000 / props.interval);
-    setTimeoutID(timeout);
-    console.log(timeoutID)
-  }; */
 
   const handleClick = () => {
     props.setCurrencyValue(props.currencyValue + 1);
-/*     if (start === false) {
-      currencyInterval();
-      setStart(true);
-    } else {
-      clearTimeout(timeoutID);
-      currencyInterval();
-    } */
+
   };
 
   return (
