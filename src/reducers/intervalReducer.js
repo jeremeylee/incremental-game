@@ -1,4 +1,4 @@
-const intervalReducer = (state = 1000, action) => {
+const intervalReducer = (state = 100, action) => {
   if (action.type === 'NEW') {
     const newInterval = state + action.newInterval;
     return newInterval;

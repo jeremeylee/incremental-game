@@ -5,12 +5,12 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import goldReducer from './reducers/goldReducer';
+import currencyReducer from './reducers/currencyReducer';
 import navigationReducer from './reducers/navigationReducer';
 import intervalReducer from './reducers/intervalReducer';
 
 const reducer = combineReducers({
-  currency: goldReducer,
+  currency: currencyReducer,
   navigation: navigationReducer,
   interval: intervalReducer,
 });

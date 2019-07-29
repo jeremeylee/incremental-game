@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import Currency from './currency';
+import React from 'react';
 
 const Home = (props) => {
   return (
-    <Currency />
+    <div>
+
+    </div>
   );
 }
 
