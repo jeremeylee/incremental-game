@@ -10,7 +10,7 @@ const Navigation = (props) => {
 
   return (
     <Row type="flex" justify="center">
-      <Tabs defaultActiveKey="1">
+      <Tabs defaultActiveKey="1" style={ {width: 500 }}>
         <TabPane tab="Home" key="1">
           <Home />
         </TabPane>
@@ -18,6 +18,8 @@ const Navigation = (props) => {
           <Shop
             currencyValue = {props.currencyValue}
             setCurrencyValue = {props.setCurrencyValue}
+            purchased={props.purchased}
+            setPurchased={props.setPurchased}
           />
         </TabPane>
       </Tabs>

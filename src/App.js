@@ -8,6 +8,7 @@ import { useInterval } from './hooks/useInterval';
 
 const App = (props) => {
   const [currencyValue, setCurrencyValue] = useState(0);
+  const [purchased, setPurchased] = useState([0, 0, 0, 0]);
 
   useInterval(() => {
     setCurrencyValue(currencyValue + props.interval);
@@ -19,6 +20,8 @@ const App = (props) => {
       <Navigation 
         currencyValue={currencyValue}
         setCurrencyValue={setCurrencyValue}
+        purchased={purchased}
+        setPurchased={setPurchased}
       />
       <Currency 
         currencyValue={currencyValue}

@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'antd';
+import { Button, Row } from 'antd';
 import { updateCurrency } from '../reducers/currencyReducer';
 import { updateInterval } from '../reducers/intervalReducer';
 
 const ShopItem = (props) => {
-  const [purchased, setPurchased] = useState(false);
 
   const handlePurchase = () => {
     if (props.currencyValue >= props.cost) {
+      const newPurchase = [...props.purchased];
+      newPurchase[props.index] += 1;
       props.updateCurrency(props.currencyValue - props.cost);
       props.updateInterval(props.rate);
       props.setCurrencyValue(props.currencyValue - props.cost);
-      setPurchased(true);
+      props.setPurchased(newPurchase);
     }
-
   };
 
 
   return (
     <div>
-      {!purchased ? <Button onClick={handlePurchase}>
-          {props.label} 
-          {' '}
-          {props.cost}
-        </Button> : <div />}
+      <Row>
+        {props.description}
+      </Row>
+      <Row type="flex" justify="center">
+        <Button onClick={handlePurchase}>Purchase</Button>
+      </Row>
+      
     </div>
 
   );
