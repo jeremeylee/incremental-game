@@ -10,11 +10,6 @@ const App = (props) => {
   const [currencyValue, setCurrencyValue] = useState(0);
   const [newRate, setNewRate] = useState(0);
 
-  const handleClick = () => {
-    props.updateInterval(100)
-    console.log(newRate);
-  }
-
   useInterval(() => {
     setCurrencyValue(currencyValue + props.interval);
   }, 1000);
@@ -30,7 +25,6 @@ const App = (props) => {
         currencyValue={currencyValue}
         setCurrencyValue={setCurrencyValue}  
       />
-      <button onClick = {handleClick}>test</button>
     </div>
   );
 };
