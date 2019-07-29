@@ -30,18 +30,12 @@ const Currency = (props) => {
     } */
   };
 
-  const handleUpdate = () => {
-    props.updateCurrency(props.currencyValue);
-    console.log(props.currency);
-  }
-
   return (
     <Row type="flex" justify="center">
       <Col>
         <Row type="flex" justify="center">{props.currencyValue}</Row>
         <Row type="flex" justify="center">
           <Button onClick={handleClick}>Increment</Button>
-          <Button onClick={handleUpdate}>Update</Button>
         </Row>
       </Col>
     </Row>
