@@ -1,9 +1,14 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Menu } from 'antd';
 
 const ShopItem = (props) => {
   return (
-    <Button>{props.label}</Button>
+    <Menu
+        style={{ width: 256 }}
+        mode="vertical"
+      >
+        <Menu.Item >{props.label}</Menu.Item>
+      </Menu>
   )
 }
 

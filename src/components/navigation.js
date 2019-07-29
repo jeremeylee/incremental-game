@@ -1,23 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Row, Menu } from 'antd';
+import { Row, Menu, Tabs } from 'antd';
 import { navigate } from '../reducers/navigationReducer';
+import Home from './home';
+import Shop from './shop';
 
 const Navigation = (props) => {
+  const { TabPane } = Tabs;
   const handleClick = (menu) => {
-    props.navigate(menu.key);
+    //props.navigate(menu.key);
   };
   return (
     <Row type="flex" justify="center">
-      <Menu
-        style={{ width: 256 }}
-        defaultSelectedKeys={['1']}
-        mode="horizontal"
-        onSelect={handleClick}
-      >
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">Shop</Menu.Item>
-      </Menu>
+      <Tabs defaultActiveKey="1">
+        <TabPane tab="Home" key="1">
+          <Home />
+        </TabPane>
+        <TabPane tab="Shop" key="2">
+          <Shop />
+        </TabPane>
+      </Tabs>
     </Row>
 
   );
