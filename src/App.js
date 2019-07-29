@@ -1,12 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Navigation from './components/navigation';
 import Currency from './components/currency';
+import { updateInterval } from './reducers/intervalReducer';
+
+const useInterval = (callback, delay) => {
+  const savedCallBack = useRef();
+
+  useEffect(() => {
+    savedCallBack.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    const tick = () => {
+      savedCallBack.current();
+    };
+    if (delay !== null) {
+      const id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+};
 
 const App = (props) => {
   const [currencyValue, setCurrencyValue] = useState(0);
+  const [newRate, setNewRate] = useState(0);
 
+  const handleClick = () => {
+    props.updateInterval(100)
+    console.log(newRate);
+  }
+
+  useInterval(() => {
+    setCurrencyValue(currencyValue + props.interval);
+  }, 1000);
   
   return (
     <div className="App">
@@ -19,6 +47,7 @@ const App = (props) => {
         currencyValue={currencyValue}
         setCurrencyValue={setCurrencyValue}  
       />
+      <button onClick = {handleClick}>test</button>
     </div>
   );
 };
@@ -26,7 +55,14 @@ const App = (props) => {
 const mapStateToProps = state => (
   {
     navigation: state.navigation,
+    interval: state.interval,
   }
 );
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (
+  {
+    updateInterval,
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

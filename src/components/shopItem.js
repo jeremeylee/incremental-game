@@ -7,7 +7,7 @@ import { updateInterval } from '../reducers/intervalReducer';
 const ShopItem = (props) => {
   const [purchased, setPurchased] = useState(false);
 
-  const currencyInterval = () => {
+/*   const currencyInterval = () => {
     if (props.interval) {
       clearInterval(props.interval);
     } else {
@@ -18,13 +18,13 @@ const ShopItem = (props) => {
       updateInterval(intervalID);
     }
   };
-
+ */
   const handlePurchase = () => {
     if (props.currencyValue >= props.cost) {
       updateCurrency(props.currencyValue - props.cost);
       props.setCurrencyValue(props.currencyValue - props.cost);
       setPurchased(true);
-      currencyInterval();
+      /* currencyInterval(); */
     }
     
   };
