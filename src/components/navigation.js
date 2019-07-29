@@ -15,7 +15,10 @@ const Navigation = (props) => {
           <Home />
         </TabPane>
         <TabPane tab="Shop" key="2">
-          <Shop />
+          <Shop
+            currencyValue = {props.currencyValue}
+            setCurrencyValue = {props.setCurrencyValue}
+          />
         </TabPane>
       </Tabs>
     </Row>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Button } from 'antd';
 import { connect } from 'react-redux';
-import { incrementCurrency } from '../reducers/currencyReducer';
+import { updateCurrency } from '../reducers/currencyReducer';
 import { updateInterval } from '../reducers/intervalReducer';
 
 const Currency = (props) => {
@@ -31,7 +31,7 @@ const Currency = (props) => {
   };
 
   const handleUpdate = () => {
-    props.incrementCurrency(props.currencyValue);
+    props.updateCurrency(props.currencyValue);
     console.log(props.currency);
   }
 
@@ -57,7 +57,7 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = (
   {
-    incrementCurrency,
+    updateCurrency,
     updateInterval,
   }
 );

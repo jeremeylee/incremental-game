@@ -9,7 +9,7 @@ const currencyReducer = (state = 0, action) => {
   }
 };
 
-export const incrementCurrency = currency => (
+export const updateCurrency = currency => (
   {
     type: 'INCREMENT',
     currency,

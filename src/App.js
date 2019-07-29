@@ -11,7 +11,10 @@ const App = (props) => {
   return (
     <div className="App">
       <h2>Yeet Clicker 2000</h2>
-      <Navigation />
+      <Navigation 
+        currencyValue={currencyValue}
+        setCurrencyValue={setCurrencyValue}
+      />
       <Currency 
         currencyValue={currencyValue}
         setCurrencyValue={setCurrencyValue}  

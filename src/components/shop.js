@@ -7,21 +7,30 @@ const Shop = (props) => {
       <Row type="flex" justify="start">
         <ShopItem 
           label="yeet"
+          cost={10}
+          currencyValue = {props.currencyValue}
+          setCurrencyValue = {props.setCurrencyValue}
         />
       </Row>
       <Row type="flex" justify="start">
         <ShopItem 
           label="yeeter"
+          currencyValue = {props.currencyValue}
+          setCurrencyValue = {props.setCurrencyValue}
         />
       </Row>
       <Row type="flex" justify="start">
         <ShopItem 
           label="ultra yeet"
+          currencyValue = {props.currencyValue}
+          setCurrencyValue = {props.setCurrencyValue}
         />
       </Row>
       <Row type="flex" justify="start">
         <ShopItem 
           label="yeetadakimasu"
+          currencyValue = {props.currencyValue}
+          setCurrencyValue = {props.setCurrencyValue}
         />
       </Row>
     </div>
