@@ -4,24 +4,7 @@ import './App.css';
 import Navigation from './components/navigation';
 import Currency from './components/currency';
 import { updateInterval } from './reducers/intervalReducer';
-
-const useInterval = (callback, delay) => {
-  const savedCallBack = useRef();
-
-  useEffect(() => {
-    savedCallBack.current = callback;
-  }, [callback]);
-
-  useEffect(() => {
-    const tick = () => {
-      savedCallBack.current();
-    };
-    if (delay !== null) {
-      const id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-};
+import { useInterval } from './hooks/useInterval';
 
 const App = (props) => {
   const [currencyValue, setCurrencyValue] = useState(0);
@@ -35,7 +18,7 @@ const App = (props) => {
   useInterval(() => {
     setCurrencyValue(currencyValue + props.interval);
   }, 1000);
-  
+
   return (
     <div className="App">
       <h2>Yeet Clicker 2000</h2>
