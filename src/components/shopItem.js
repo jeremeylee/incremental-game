@@ -21,7 +21,7 @@ const ShopItem = (props) => {
   return (
     <div>
       <Row>
-        {props.description}
+        purchasing this item will increase your clicks by {props.rate} per second and cost {props.cost}
       </Row>
       <Row type="flex" justify="center">
         <Button onClick={handlePurchase}>Purchase</Button>

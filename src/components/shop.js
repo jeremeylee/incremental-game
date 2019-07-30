@@ -5,19 +5,14 @@ import ShopItem from './shopItem';
 const Shop = (props) => {
   const { TabPane } = Tabs;
 
-  const handleClick = (tab) => {
-    console.log(typeof (tab));
-  };
   return (
     <div>
       <Row type="flex" justify="start">
         <Tabs
           tabPosition="left"
-          onTabClick={handleClick}
       >
           <TabPane tab={`Clicker ${props.purchased[0]}`} key="1" >
             <ShopItem 
-              description={'purchasing this item will increase your clicks by 1 per second'}
               cost={10}
               currencyValue={props.currencyValue}
               setCurrencyValue={props.setCurrencyValue}
@@ -29,7 +24,6 @@ const Shop = (props) => {
           </TabPane>
           <TabPane tab={`Fast Clicker ${props.purchased[1]}`} key="2" >
             <ShopItem 
-                description={'purchasing this item will increase your clicks by 15 per second'}
                 cost={200}
                 currencyValue={props.currencyValue}
                 setCurrencyValue={props.setCurrencyValue}
@@ -41,7 +35,6 @@ const Shop = (props) => {
           </TabPane>
           <TabPane tab={`Faster Clicker ${props.purchased[2]}`} key="3" >
             <ShopItem 
-                description={'purchasing this item will increase your clicks by 50 per second'}
                 cost={1500}
                 currencyValue={props.currencyValue}
                 setCurrencyValue={props.setCurrencyValue}
@@ -53,7 +46,6 @@ const Shop = (props) => {
           </TabPane>
           <TabPane tab={`Fastest Clicker ${props.purchased[3]}`} key="4" >
             <ShopItem 
-                description={'purchasing this item will increase your clicks by 100 per second'}
                 cost={10000}
                 currencyValue={props.currencyValue}
                 setCurrencyValue={props.setCurrencyValue}
