@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project was based on the concept of an incremental game. The player can increment a value and use that value as currency to purchase upgrades that increase the rate of accruing the currency.
 
+Visit the following link to play:
+https://jeremeylee.github.io/incremental-game/
+
 ## Purpose
 
 I built this project in order to practice using react and redux.
